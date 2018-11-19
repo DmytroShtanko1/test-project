@@ -1,0 +1,8 @@
+{
+  "presets": [ "es2017-node7" ],
+  "plugins": [
+    "babel-plugin-transform-async-to-generator",
+    "babel-plugin-transform-es2015-modules-commonjs"
+  ]
+}
+

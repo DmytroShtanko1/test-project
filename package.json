@@ -1,0 +1,87 @@
+{
+  "name": "nightwatch-cucumber",
+  "version": "1.0.0",
+  "description": "Nightwatch.js plugin for Cucumber.js",
+  "main": "nightwatch.conf.js",
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "author": "Dmytro Shtanko",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "cross-env": "^5.2.0",
+    "html-dnd": "^1.2.0",
+    "htmltemplate-parser": "^2.0.0",
+    "james-browser-launcher": "^1.3.1",
+    "kill-chrome": "^2.2.0",
+    "lodash": "^4.17.11",
+    "nightwatch-xhr": "^0.4.6",
+    "npm": "^6.4.1",
+    "qs": "^6.5.2"
+  },
+  "scripts": {
+    "build": "babel pages -d dist",
+    "start": "nightwatch",
+    "debug": "babel-node --inspect=127.0.0.1:5959 node_modules/nightwatch/bin/nightwatch --env chrome --config single.conf.js --tag",
+    "start:chrome": "npm run start -- --env chrome --config single.conf.js --tag",
+    "start:firefox": "npm run start -- --env firefox --config single.conf.js --tag",
+    "start:chrome:headless": "npm run start -- --env headless --config single.conf.js --tag",
+    "report": "node reporter.js",
+    "rerun_report": "node retry.reporter.js",
+    "run_failed_tests": "npm run start -- --env chrome --config single.conf.js --tag $(cat retry.error.tests.txt)",
+    "run_failed": "npm-run-all run_failed_tests rerun_report --continue-on-error"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mucsi96/nightwatch-cucumber.git"
+  },
+  "keywords": [
+    "nightwatch",
+    "cucumber",
+    "gherkin",
+    "bdd",
+    "selenium",
+    "browser",
+    "automation",
+    "testing",
+    "test"
+  ],
+  "bugs": {
+    "url": "https://github.com/mucsi96/nightwatch-cucumber/issues"
+  },
+  "homepage": "https://github.com/mucsi96/nightwatch-cucumber#readme",
+  "files": [
+    "lib",
+    "resources"
+  ],
+  "devDependencies": {
+    "async": "^2.6.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2017-native-modules": "0.0.2",
+    "babel-preset-es2017-node7": "^0.5.2",
+    "babel-register": "^6.26.0",
+    "chromedriver": "^2.43.0",
+    "cucumber": "^5.0.2",
+    "cucumber-html-reporter": "^4.0.4",
+    "cucumber-junit": "^1.7.1",
+    "cucumber-pretty": "^1.4.4",
+    "fakerator": "^0.3.0",
+    "fecha": "^2.3.1",
+    "geckodriver": "^1.11.0",
+    "nightwatch": "^0.9.21",
+    "nightwatch-cucumber": "^9.1.3",
+    "npm-run-all": "^4.1.3",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "selenium-server": "^3.14.0",
+    "time-stamp": "^2.0.0"
+  },
+  "config": {}
+}
