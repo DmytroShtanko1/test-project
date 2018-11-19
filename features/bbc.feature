@@ -13,9 +13,9 @@ Feature: BBC registration
     Given have a temporary mail adress
     And go to the main page <site domain>
     When I click to Sign in
-    And see BBC – Sign in form
+    Then see BBC – Sign in form
     And click Register now link
-    Then see BBC – Register form
+    And see BBC – Register form
     And I see 2 buttons with ages
     And choose more 13 age
     And see BBC – Register – enter your date of birth form

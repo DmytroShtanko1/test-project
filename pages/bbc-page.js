@@ -7,6 +7,14 @@ export class BBC {
     static async waitSignInPage(title) {
         await client.waitForTitle(res => res === title);
     }
+    static async submitButton(){
+        await client.clickButton(bbc_reg.SubmitButton, 'Click Submit date');
+        try{
+            await client.waitForElementNotPresent(bbc_reg.DayReg, timeouts.ll);
+        }catch(e){
+            await client.clickButton(bbc_reg.SubmitButton, 'Click Submit date');
+        }
+    }
 
     static async clickRegisterButton() {
         await client.clickButton(bbc_reg.RegistrationButton, 'Click registration link');

@@ -32,12 +32,11 @@ After(() => new Promise(resolve => {
     }, 1);
 }));
 
-AfterAll(() => new Promise(resolve => {
-    setTimeout(() => {
-        killChrome();
-        return resolve(true)
-    }, 1);
-}));
+AfterAll(async () => {
+try{
+    await killChrome()
+}catch(e){}
+});
 
 BeforeAll(function () {
     client.timeoutsImplicitWait(timeouts.l);

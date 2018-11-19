@@ -40,7 +40,7 @@ Then(/^fill in it by random data$/, async () => {
 });
 
 Then(/^submit data$/, async () => {
-    await client.clickButton(bbc_reg.SubmitButton, 'Click Submit date');
+    await BBC.submitButton();
 });
 
 Then(/^fill temp mail and pass from acc$/, async () => {
