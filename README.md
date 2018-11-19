@@ -1,2 +1,2 @@
 npm i
-npm run start:chrome bbc.registration
+\n npm run start:chrome bbc.registration
