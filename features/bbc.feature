@@ -15,7 +15,7 @@ Feature: BBC registration
     When I click to Sign in
     And see BBC – Sign in form
     And click Register now link
-    And see BBC – Register form
+    Then see BBC – Register form
     And I see 2 buttons with ages
     And choose more 13 age
     And see BBC – Register – enter your date of birth form
